@@ -1,0 +1,74 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f6f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("../images/back.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.info {
+  text-align: left;
+  flex: 1;
+}
+
+.info h2 {
+  color: #0078D4;
+  margin-bottom: 20px;
+}
+
+.info p {
+  font-size: 16px;
+  color: #333;
+  margin: 8px 0;
+}
+
+.qr-section {
+  text-align: center;
+  flex: 1;
+}
+
+.qr-section img.logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.qr-section canvas {
+  margin-top: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.note {
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .qr-section {
+    margin-top: 20px;
+  }
+}

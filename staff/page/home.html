@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanoi Global Hotel - Home</title>
+    <link rel="stylesheet" href="../styles/style_home.css">
+    <script src="../js/user.js"></script>
+    <script src="../assets/qrcode.min.js"></script>
+    <script src="../assets/xlsx.full.min.js"></script>
+    
+</head>
+<body>
+
+    <main>
+        <header>
+            <img src="../images/logo_big_size.webp" alt="">
+            <div>
+                <h1 id="name" ></h1>
+                <form action="login.html">
+                    <button onclick="login()">Đăng xuất</button>
+                </form>
+    
+            </div>
+        </header>
+        <nav>
+            <button data-section="room-status" onclick="showSection('room-status')">Trạng thái phòng</button>
+            <button data-section="room-booking" onclick="showSection('room-booking')">Đặt phòng</button>
+            <button data-section="service-confirm" onclick="showSection('service-confirm')">Dịch vụ</button>
+            <button data-section="booking-list" onclick="showSection('booking-list')">Danh sách đơn</button>
+    
+        </nav>
+        
+        <section id="room-status" class="hidden, room-status">
+            <div class="save">
+                <div><h2>Trạng thái phòng</h2></div>
+                <div style="margin:auto; margin-right: 15px; display: flex;">
+                    <button id="prevPage" style="margin-right:10px;">&#60;</button>
+                    <button id="nextPage">&#62;</button>
+                </div>
+            </div>
+            <table id="sheet1"></table>
+        </section>
+
+        
+        <section id="room-booking" class="hidden, room-booking">
+            <div class="save">
+                <div><h2>Đặt phòng</h2></div>
+                <button onclick="saveData()">💾save</button>
+            </div>
+            <div class="table-wrap">
+                <table id="sheet2"></table>
+            </div>
+            
+        </section>
+    
+        <section id="service-confirm" class="hidden">
+            <div class="service-confirm">
+                <div><h2>Dịch vụ</h2></div>
+                <nav>
+                    <button data-section="restaurant" onclick="showSection('restaurant')">Dịch vụ ăn uống</button>
+                    <button data-section="spa" onclick="showSection('spa')">Dịch vụ Spa</button>
+                    <button data-section="carService" onclick="showSection('carService')">Dịch vụ đưa đón</button>
+    
+                </nav>
+            </div>
+    
+        </section>
+    
+        <section id="restaurant" class="hidden, restaurant">
+            <div class="save">
+                <div><h2>Ăn uống</h2></div>
+                <button onclick="saveData()">💾save</button>
+                <button data-section="service-confirm" onclick="showSection('service-confirm')" style="margin: auto 20px auto 20px;">Back</button>
+            </div>
+            <div class="table-wrap">
+                <table id="sheet3"></table>
+            </div>
+            
+        </section>
+    
+        <section id="spa" class="hidden, spa">
+            <div class="save">
+                <div><h2>Spa</h2></div>
+                <button onclick="saveData()">💾save</button>
+                <button data-section="service-confirm" onclick="showSection('service-confirm')" style="margin: auto 20px auto 20px;">Back</button>        
+            </div>
+            <div class="table-wrap">
+                <table id="sheet4"></table>
+            </div>
+            
+    
+        </section>
+    
+        <section id="carService" class="hidden, car-service">
+            <div class="save">
+                <div><h2>Đưa đón</h2></div>
+                <button onclick="saveData()">💾save</button>
+                <button data-section="service-confirm" onclick="showSection('service-confirm')" style="margin: auto 20px auto 20px;">Back</button>        
+            </div>
+            <div class="table-wrap">
+                <table id="sheet5"></table>
+            </div>
+        </section>
+    
+        <section id="booking-list" class="hidden, booking-list">
+            <div class="save">
+                <div><h2>Đơn đặt phòng & dịch vụ</h2></div>
+            </div>
+            <div class="table-wrap">
+                <table id="sheet6"></table>
+            </div>
+            
+        </section>
+
+        
+
+    </main>
+
+    <footer>
+        <div>
+            <p>&phone; Manager (+84)971****23</p>
+            <p>&phone; Sự cố kĩ thuật (+84)971****23</p>
+        </div>
+        
+    </footer>
+    
+</body>
+</html>

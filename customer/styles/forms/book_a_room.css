@@ -1,0 +1,100 @@
+
+    body {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #3F72AF, #ffffff);
+      margin: 0;
+      padding: 0;
+
+
+    }
+
+    header {
+      height: 60px;
+      background: #081b30;
+    }
+
+    .banner {
+      width: 100%;
+      height: 250px;
+      background: url("/Web/Booking/images/hotel.webp") center/cover no-repeat ;
+      border-radius: 12px;
+      margin:20px auto;
+      max-width: 1400px;
+    }
+
+
+
+    h2 {
+      text-align: center;
+      color: #112D4E;
+      font-size: 50px;
+      margin: 15px 0 25px 0;
+    }
+
+    .form-container {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      
+    }
+
+    .form-box {
+      background: #ffffff3d;
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(38, 47, 79, 0.54);
+      width: 500px;
+      margin: 1px ;
+    }
+
+    .form-box h3 {
+      margin-top: 0;
+      color: #333;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .btn-submit {
+      display: block;
+      margin: 50px auto;
+      padding: 19px 40px;
+      border-radius: 26px;
+      border: 1px solid #999;
+      background: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+      background: #042e5a;
+      color: white;
+      border: none;
+    }
+
+    footer {
+      height: 100px;
+      background: linear-gradient(90deg, #b5b5b5, #999);
+      margin-top: 30px;
+    }
+    

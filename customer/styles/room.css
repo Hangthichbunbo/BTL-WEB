@@ -1,0 +1,597 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: #0f172a;
+  background: #fff;
+  padding-top: 90px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 20px;
+  margin: 20px 0 10px;
+  font-weight: 600;
+}
+
+/* ===================== Header ===================== */
+.header {
+  background-color: #112d4e;
+  position: fixed;
+  height: 90px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.header .header-logo {
+  margin: 0 64px;
+}
+.header .header-logo img {
+  height: 80px;
+}
+
+.header-nav li {
+  display: inline-block;
+}
+.header-nav li a {
+  line-height: 90px;
+}
+
+.header-nav li a,
+.header-book-room a {
+  color: #fff;
+  padding: 0 16px;
+  display: block;
+}
+
+.header-nav li:hover a {
+  background-color: #3f72af;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.header-book-room {
+  line-height: 39px;
+  margin: 0 40px;
+}
+
+.header .mobile-menu-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  padding: 0 24px;
+}
+
+.header .menu-icon {
+  color: #fff;
+  font-size: 20px;
+  line-height: 90px;
+}
+
+@media (max-width: 768px) {
+  .header-menu {
+    display: none;
+  }
+  .header-menu.is-open {
+    display: block;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    background: #112d4e;
+    padding: 8px 0;
+  }
+  .header-nav li {
+    display: block;
+  }
+  .header .mobile-menu-btn {
+    display: block;
+  }
+}
+
+/* ===================== Generic .btn ===================== */
+.btn {
+  cursor: pointer;
+  background-color: #dbe2ef;
+  text-align: center;
+  border-radius: 12px;
+  padding: 5px 25px;
+  color: #000;
+  display: inline-block;
+  border: #fff;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #3f72af;
+  color: #fff;
+}
+
+/* Header CTA */
+.header-book-room {
+  background-color: #3f72af;
+  color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+.header-book-room a {
+  color: #fff;
+  display: block;
+  font-size: 16px;
+}
+
+.header-book-room:hover {
+  background-color: #dbe2ef;
+  color: #000;
+}
+.header-book-room:hover a {
+  color: #000;
+}
+
+/* ===================== Carousel ===================== */
+.carousel,
+.filter-bar {
+  scroll-margin-top: 100px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  height: 54vh;
+  min-height: 260px;
+  background: #111;
+}
+
+.carousel__track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.carousel__slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(255, 255, 255, 0.85);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 38px;
+  text-align: center;
+}
+
+.carousel__btn.prev {
+  left: 12px;
+}
+.carousel__btn.next {
+  right: 12px;
+}
+
+.carousel__dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.carousel__dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: #e5e7eb;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.carousel__dots button.is-active {
+  opacity: 1;
+  background: #f1f3f6;
+}
+
+@media (max-width: 960px) {
+  .carousel {
+    height: 42vh;
+  }
+}
+@media (max-width: 640px) {
+  .carousel {
+    height: 36vh;
+  }
+}
+
+/* ===================== Filter Bar ===================== */
+.filter-bar {
+  background: #7d6333;
+  padding: 14px 0;
+}
+
+.filter {
+  display: flex;
+  align-items: end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.filter .filter__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #fff;
+}
+
+.filter__label {
+  font-size: 13px;
+  opacity: 0.95;
+}
+
+.filter select,
+.filter input {
+  height: 40px;
+  min-width: 200px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  padding: 0 12px;
+  background: #fff;
+  color: #0f172a;
+  outline: none;
+}
+
+.filter__reset {
+  background: #3f72af;
+  color: #ffffff;
+  border: #fff;
+}
+
+.filter .container,
+.filter {
+  border-radius: 12px;
+}
+
+.filter-bar .container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+/* ===================== Rooms ===================== */
+.section-title {
+  color: #112d4e;
+  text-align: center;
+  margin: 28px 0 16px;
+  padding: 20px;
+  font-size: 35px;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.room-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 20px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
+}
+
+.room-card__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.room-card:hover .room-card__img {
+  transform: scale(1.06);
+  filter: brightness(1.03);
+}
+
+.room-card__name {
+  text-align: center;
+  margin: 12px 0 4px;
+  letter-spacing: 0.3px;
+}
+
+.room-card__desc {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+/* ========== FIX: nút luôn ở đáy (chừa khoảng cách cố định) ========== */
+.room-card__btn {
+  margin-top: auto;
+  margin-bottom: 12px;
+  align-self: center;
+}
+
+/* responsive */
+@media (max-width: 960px) {
+  .rooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filter select,
+  .filter input {
+    min-width: 160px;
+  }
+}
+@media (max-width: 640px) {
+  .rooms-grid {
+    grid-template-columns: 1fr;
+  }
+  .filter {
+    gap: 10px;
+  }
+  .filter select,
+  .filter input {
+    min-width: 140px;
+    width: 100%;
+  }
+  .filter .filter__item {
+    flex: 1 1 45%;
+  }
+  .filter__reset {
+    width: 100%;
+  }
+}
+
+/* ===================== Contact Buttons ===================== */
+.contact-left-btn,
+.contact-right-btn {
+  background-color: #3f72af;
+  color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  padding: 10px 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.contact-left-btn:hover,
+.contact-right-btn:hover {
+  background-color: #dbe2ef;
+  color: #000;
+}
+
+/* ===================== Price Badge ===================== */
+.room-card__media {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.room-card__price {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: #112d4e;
+  color: #fff;
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================== Forms & Popup ===================== */
+::placeholder {
+  color: #000000;
+}
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.form-box {
+  background: linear-gradient(#3f72af, #7187b0);
+  color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  width: 500px;
+  position: relative;
+  transform: scale(0.8);
+  opacity: 0;
+  animation: popupOpen 0.4s ease forwards;
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.6) transparent;
+}
+
+@keyframes popupOpen {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.form-box::-webkit-scrollbar {
+  width: 8px;
+}
+.form-box::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.form-box h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  color: #000;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn-submit {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: none;
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background: #042e5a;
+  color: white;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.closeBtn:hover {
+  color: #ffcccc;
+}
+
+button#f-reset.btn.btn--outline.filter_reset,
+button.btn.room-card__btn,
+#f-reset {
+  background: #dbe2ef !important;
+  color: #000 !important;
+  padding: 5px 20px !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  border: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+button#f-reset.btn.btn--outline.filter_reset:hover,
+button#f-reset.btn.btn--outline.filter_reset:focus,
+button.btn.room-card__btn:hover,
+button.btn.room-card__btn:focus,
+#f-reset:hover,
+#f-reset:focus {
+  background: #3f72af !important;
+  color: #fff !important;
+  box-shadow: 0 6px 16px rgba(63, 114, 175, 0.28) !important;
+  outline: none !important;
+}
+
+button#f-reset.btn.btn--outline.filter_reset:focus-visible,
+button.btn.room-card__btn:focus-visible,
+#f-reset:focus-visible {
+  outline: 3px solid #95b7e6 !important;
+  outline-offset: 2px !important;
+}

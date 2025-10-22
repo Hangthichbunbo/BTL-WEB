@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đặt Dịch Vụ - Hanoi Global Hotel</title>
+    <link rel="stylesheet" href="/customer/styles/forms/book_a_service.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/customer/js/forms/book_a_service.js" defer></script>
+</head>
+
+<body>
+    <header></header>
+    <div class="banner"></div>
+    <h1>Đặt Dịch Vụ</h1>
+
+    <main>
+        <section class="booking-section">
+            <form id="serviceForm">
+                <label>
+                    <select required>
+                        <option value="">--Chọn dịch vụ--</option>
+                        <option value="spa">Spa</option>
+                        <option value="nhà hàng">Nhà hàng</option>
+                        <option value="hội nghị">Phòng hội nghị</option>
+                    </select>
+                </label>
+
+                <div class="form-group">
+                    <input type="text" placeholder="Họ và tên" required>
+                    <input type="tel" placeholder="Số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <input type="time" required>
+                    <input type="number" placeholder="Số lượng khách" min="1" required>
+                </div>
+                <textarea placeholder="Chú thích" rows="3"></textarea>
+                <button type="submit">Gửi</button>
+            </form>
+        </section>
+    </main>
+
+    <footer></footer>
+
+</body>
+
+</html>

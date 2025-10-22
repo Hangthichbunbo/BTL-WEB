@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f4f9ff;
+    color: #333;
+}
+
+header {
+    background: #081b30;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    font-weight: bold;
+}
+
+.banner {
+    width: 100%;
+    height: 250px;
+    background: url("/Web/DV/images/hotel.webp") center/cover no-repeat;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 1400px;
+}
+
+h1 {
+    text-align: center;
+    color: #112D4E;
+    font-size: 50px;
+    margin: 15px 0 25px 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.book-btn {
+    background-color: #53585d;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.booking-section {
+    display: flex;
+    background: white;
+    padding: 30px;
+    border: 2px solid #484a5751;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 670px;
+    box-shadow: 0 2px 8px rgba(38, 47, 79, 0.54);
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.booking-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1b1e22;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    gap: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    background-color: #e2e6f0;
+    color: #002c5f;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #002c5f;
+    color: white;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .booking-section {
+        padding: 20px;
+    }
+
+    input, select {
+        font-size: 16px;
+    }
+
+    .book-btn {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}

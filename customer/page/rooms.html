@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phòng nghỉ</title>
+    <link rel="stylesheet" href="/Fonts/themify-icons/themify-icons.css" />
+    <link rel="stylesheet" href="/customer/styles/room.css" />
+    <link rel="stylesheet" href="/customer/styles/about.css" />
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <!-- Begin: Header -->
+    <div class="header">
+      <a href="home.html">
+        <div class="header-logo">
+          <img class="" src="../images/logo.png" alt="" />
+        </div>
+      </a>
+
+      <div class="header-menu">
+        <ul class="header-nav">
+          <li><a href="home.html">Trang chủ</a></li>
+          <li><a href="about.html">Về chúng tôi</a></li>
+          <li><a href="rooms.html">Phòng nghỉ</a></li>
+          <li><a href="Service.html">Tiện nghi & Dịch vụ</a></li>
+        </ul>
+
+        <div class="header-book-room btn">
+          <a href="#" id="btnBookNow">Đặt phòng ngay</a>
+        </div>
+      </div>
+      <div class="mobile-menu-btn js-menu-btn">
+        <i class="menu-icon ti-menu"></i>
+      </div>
+    </div>
+    <!-- End: Header -->
+
+    <section class="carousel" aria-label="Ảnh phòng khách sạn">
+      <div class="carousel__track" id="carousel-track">
+        <img
+          src="/customer/images/room/deluxe.webp"
+          alt="Phòng 1"
+          class="carousel__slide"
+        />
+        <img
+          src="/customer/images/room/executive-suite.webp"
+          alt="Phòng 2"
+          class="carousel__slide"
+        />
+        <img
+          src="/customer/images/room/executive.webp"
+          alt="Phòng 3"
+          class="carousel__slide"
+        />
+        <img
+          src="/customer/images/room/grand-deluxe.webp"
+          alt="Phòng 4"
+          class="carousel__slide"
+        />
+        <img
+          src="/customer/images/room/park-executive.webp"
+          alt="Phòng 5"
+          class="carousel__slide"
+        />
+        <img
+          src="/customer/images/room/premier-quad.webp"
+          alt="Phòng 6"
+          class="carousel__slide"
+        />
+      </div>
+      <button class="carousel__btn prev" id="prevBtn" aria-label="Ảnh trước">
+        ‹
+      </button>
+      <button class="carousel__btn next" id="nextBtn" aria-label="Ảnh sau">
+        ›
+      </button>
+      <div class="carousel__dots" id="carousel-dots"></div>
+    </section>
+
+    <section class="filter-bar">
+      <div class="container">
+        <form class="filter" onsubmit="return false">
+          <label class="filter__item">
+            <span class="filter__label">Số khách</span>
+            <select id="f-guests">
+              <option value="">Tất cả</option>
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+            </select>
+          </label>
+          <label class="filter__item">
+            <span class="filter__label">Loại phòng</span>
+            <select id="f-type">
+              <option value="">Tất cả</option>
+              <option value="phong-don">Phòng đơn</option>
+              <option value="phong-doi">Phòng đôi</option>
+            </select>
+          </label>
+          <label class="filter__item">
+            <span class="filter__label">Giá tối đa (VND)</span>
+            <input
+              id="f-maxprice"
+              type="number"
+              min="0"
+              placeholder="VD: 3000000"
+            />
+          </label>
+          <button id="f-reset" class="btn btn--outline filter__reset">
+            Xóa lọc
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <main class="container">
+      <h2 class="section-title">Kết quả</h2>
+      <div id="rooms-grid" class="rooms-grid"></div>
+    </main>
+
+    <!-- Begin: Contact -->
+    <div class="contact-container">
+      <div class="contact">
+        <div class="contact-left">
+          <p class="heading">Liên hệ với chúng tôi</p>
+          <div class="contact-left-info">
+            <p>+00 151515</p>
+          </div>
+          <a href="" class="btn contact-left-btn">Liên hệ ngay</a>
+        </div>
+
+        <div class="contact-right">
+          <p class="heading">Đặt phòng & Dịch vụ</p>
+          <a href="../page/rooms.html" class="btn contact-right-btn"
+            >Đặt phòng</a
+          >
+          <a href="../page/Service.html" class="btn contact-right-btn"
+            >Đặt dịch vụ</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- End: Contact -->
+
+    <div class="footer">
+      <div class="footer-img">
+        <img src="/customer/images/logo2.png" alt="Logo Hotel" class="" />
+      </div>
+
+      <div class="footer-contact">
+        <p class="heading">Liên hệ</p>
+        <div class="footer-contact-items">
+          <p><i class="ti-location-pin"></i>Số 3 Cầu Giấy, Hà Nội.</p>
+          <p>
+            <i class="ti-mobile"></i>Phone:
+            <a href="tel:+00 151515">+84 123456789</a>
+          </p>
+          <p>
+            <i class="ti-email"></i>Email:
+            <a href="mailto:mail@mail.com">mail@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-social-list">
+        <p class="heading">Theo dõi chúng tôi</p>
+        <div class="social-list-items">
+          <a href=""><i class="ti-facebook"></i></a>
+          <a href=""><i class="ti-instagram"></i></a>
+          <a href=""><i class="ti-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile js-nav">
+      <div class="mobile-container js-nav-container">
+        <div class="mobile-body">
+          <ul class="mobile-nav">
+            <li><a href="home.html">Trang chủ</a></li>
+            <li><a href="rooms.html">Phòng nghỉ</a></li>
+            <li><a href="Service.html">Tiện nghi & dịch vụ</a></li>
+            <li><a href="forms/book_a_room.html">Đặt phòng</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="bookingPopup">
+      <div class="form-box">
+        <button class="closeBtn" id="closePopup">&times;</button>
+        <h3>Nhập thông tin đặt phòng</h3>
+
+        <form id="bookingForm">
+          <label>Loại phòng</label>
+          <select id="roomType">
+            <option value="">-- Chọn loại phòng --</option>
+          </select>
+          <p><b>Giá phòng:</b> <span id="roomPrice">0</span>tr VNĐ</p>
+
+          <label>Ngày nhận phòng</label>
+          <input type="date" id="checkin" />
+
+          <label>Ngày trả phòng</label>
+          <input type="date" id="checkout" />
+
+          <label>Họ và tên</label>
+          <input type="text" id="fullname" placeholder="Nhập họ tên..." />
+
+          <label>Số điện thoại</label>
+          <input type="tel" id="phone" placeholder="Nhập số điện thoại..." />
+
+          <label>CCCD</label>
+          <input type="text" id="cccd" placeholder="Nhập CCCD..." />
+
+          <label>Email</label>
+          <input type="email" id="email" placeholder="Nhập email..." />
+
+          <label>Yêu cầu</label>
+          <textarea id="note" rows="3" placeholder="Ghi chú thêm..."></textarea>
+
+          <button type="submit" class="btn-submit">Xác nhận đặt phòng</button>
+        </form>
+      </div>
+    </div>
+    <!-- Popup Thanh Toán -->
+    <div id="paymentPopup" class="popup" style="display: none">
+      <div class="form-box" style="text-align: center">
+        <button class="closeBtn" id="closePayment">&times;</button>
+        <h3>Thanh toán đặt phòng</h3>
+        <p><b>Phòng:</b> <span id="payRoomName"></span></p>
+        <p><b>Tổng tiền:</b> <span id="payAmount"></span> VNĐ</p>
+
+        <img
+          src="/customer/images/qr.jpg"
+          alt="QR Thanh toán"
+          class="qr-image"
+        />
+        <button id="btnDone" class="btn-submit" style="margin-top: 15px">
+          Tôi đã thanh toán
+        </button>
+      </div>
+    </div>
+
+    <!-- Popup Cảm ơn -->
+    <div id="thankPopup" class="popup" style="display: none">
+      <div class="form-box" style="text-align: center">
+        <button class="closeBtn" id="closeThank">&times;</button>
+        <h3>🎉 Cảm ơn quý khách!</h3>
+        <p>Chúng tôi đã nhận được thanh toán của bạn.</p>
+        <p>Chúc quý khách có một kỳ nghỉ tuyệt vời tại khách sạn!</p>
+        <img
+          src="/customer/images/thankyou.webp"
+          alt="Cảm ơn quý khách"
+          style="width: 150px; margin-top: 15px; border-radius: 10px"
+        />
+      </div>
+    </div>
+
+    <script src="/customer/js/rooms.js"></script>
+    <script src="/customer/js/home.js"></script>
+  </body>
+</html>
